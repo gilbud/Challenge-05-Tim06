@@ -6,6 +6,7 @@ import Search from "./pages/Search";
 import Detail from "./pages/Detail";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/header" element={<Header />} />
       </Routes>
     </BrowserRouter>
   );

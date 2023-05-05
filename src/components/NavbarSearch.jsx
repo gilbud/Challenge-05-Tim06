@@ -3,7 +3,7 @@ import { Container, Form, Button, Navbar } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/StyleNavbar.css";
 
-function Navbar1() {
+function NavbarSearch() {
   const navigate = useNavigate();
 
   const handleSearch = async (event) => {
@@ -56,4 +56,4 @@ function Navbar1() {
   );
 }
 
-export default Navbar1;
+export default NavbarSearch;

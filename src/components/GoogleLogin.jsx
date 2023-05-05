@@ -14,9 +14,9 @@ function GoogleLogin({ buttonText }) {
       let config = {
         method: "post",
         maxBodyLength: Infinity,
-        url: "",
+        url: `https://km4-challenge-5-api.up.railway.app/api/v1/auth/register`,
         headers: {
-          "Content-Type": "",
+          "Content-Type": "application/json",
         },
         data: data,
       };

@@ -18,20 +18,12 @@ function NavbarNoSearch() {
         </div>
         <div className="me-3">
           <Button
-            variant="outline-waning"
+            variant="outline-light"
             className="Navbar-button"
             as={Link}
-            to={"/login"}
+            to={"/header"}
           >
-            Login
-          </Button>
-          <Button
-            variant="warning"
-            className="Navbar-button"
-            as={Link}
-            to={"/register"}
-          >
-            Register
+            Logout
           </Button>
         </div>
       </Container>
