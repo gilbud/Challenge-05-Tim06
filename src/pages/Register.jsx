@@ -1,9 +1,13 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { toast } from "react-toastify";
 import NavbarNoSearch from "../components/NavbarNoSearch";
+
 import GoogleOAuth from "../components/GoogleOAuth";
+
+import "../styles/StyleRegister.css";
+
 
 function Register() {
   const [name, setName] = useState("");
@@ -22,9 +26,9 @@ function Register() {
 
       let config = {
         method: "post",
-        url: "",
+        url: `https://km4-challenge-5-api.up.railway.app/api/v1/auth/register`,
         headres: {
-          "Content-Type": "",
+          "Content-Type": "application/json",
         },
         data: data,
       };
@@ -83,7 +87,7 @@ function Register() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </Form.Group>
-              <Button variant="warning" type="submit">
+              <Button variant="warning" type="submit" onClick={onSubmit}>
                 Register
               </Button>
             </Form>

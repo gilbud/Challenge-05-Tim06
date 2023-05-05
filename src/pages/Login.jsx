@@ -3,7 +3,11 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import NavbarNoSearch from "../components/NavbarNoSearch";
 import axios from "axios";
 import { toast } from "react-toastify";
+
 import GoogleOAuth from "../components/GoogleOAuth";
+
+import "../styles/StyleLogin.css";
+
 
 function Login() {
   const [email, setEmail] = useState("");
