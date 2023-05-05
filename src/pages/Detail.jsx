@@ -5,11 +5,42 @@ import { Button, Carousel } from "react-bootstrap";
 import NavbarSearch from "../components/NavbarSearch";
 import { StarFill } from "react-bootstrap-icons";
 import "../styles/StyleDetail.css";
+import { toast } from "react-toastify";
 
 const baseUrl = process.env.REACT_APP_BASEURL;
 const apiKey = process.env.REACT_APP_APIKEY;
 
 function Detail() {
+  const [user, setUser] = useState("");
+
+  useEffect(() => {
+    const getMe = async (id) => {
+      try {
+        const token = localStorage.getItem("token");
+
+        const response = await axios.get(
+          `${process.env.REACT_APP_API}/v1/movie/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        const data = response.data.data;
+        setUser(data);
+      } catch (error) {
+        if (axios.isAxiosError(error)) {
+          if (error.response.status === 401) {
+            localStorage.removeItem("token");
+            return (window.location.href = "/login");
+          }
+          toast.error(error.message);
+        }
+      }
+    };
+    getMe(params.id);
+  });
+
   const [detailMovie, setDetail] = useState({});
   const params = useParams();
 

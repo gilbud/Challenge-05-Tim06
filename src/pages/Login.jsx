@@ -3,9 +3,7 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import NavbarNoSearch from "../components/NavbarNoSearch";
 import axios from "axios";
 import { toast } from "react-toastify";
-
 import GoogleOAuth from "../components/GoogleOAuth";
-
 import "../styles/StyleLogin.css";
 
 
@@ -24,7 +22,7 @@ function Login() {
 
       let config = {
         method: "post",
-        url: `https://km4-challenge-5-api.up.railway.app/api/v1/auth/login`,
+        url: `${process.env.REACT_APP_API}/v1/auth/login`,
         headers: {
           "Content-Type": "application/json",
         },
