@@ -3,6 +3,7 @@ import { Form, Button, Container } from "react-bootstrap";
 import NavbarNoSearch from "../components/NavbarNoSearch";
 import axios from "axios";
 import { toast } from "react-toastify";
+import "../styles/StyleLogin.css";
 
 function Login() {
   const [email, setEmail] = useState("");
