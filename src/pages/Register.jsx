@@ -26,7 +26,7 @@ function Register() {
       let config = {
         method: "post",
         url: `${process.env.REACT_APP_API}/v1/auth/register`,
-        Headers: {
+        headers: {
           "Content-Type": "application/json",
         },
         data: data,
@@ -53,14 +53,15 @@ function Register() {
       <Container className="p-5 mt-5">
         <Row>
           <Col>
-            <Form onSubmit={onSubmit}>
+            <Form>
               <Form.Group className="mb-4" controlId="formBasicEmail">
                 <Form.Label className="text-light">Name</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Enter Name"
+                  name="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  placeholder="Enter Name"
                 />
               </Form.Group>
 
@@ -68,9 +69,10 @@ function Register() {
                 <Form.Label className="text-light">Email address</Form.Label>
                 <Form.Control
                   type="email"
-                  placeholder="Enter email"
+                  name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter email"
                 />
                 <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
@@ -81,9 +83,10 @@ function Register() {
                 <Form.Label className="text-light">Password</Form.Label>
                 <Form.Control
                   type="password"
-                  placeholder="Password"
+                  name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Password"
                 />
               </Form.Group>
               <Button variant="warning" type="submit" onClick={onSubmit}>
