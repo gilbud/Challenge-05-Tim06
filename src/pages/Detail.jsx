@@ -82,13 +82,7 @@ function Detail() {
                 })}
             </p>
             <p className="Movie-caption-text">{detailMovie?.overview}</p>
-            <p className="Movie-rate">
-              <StarFill className="Icon-star" />
-              {detailMovie?.vote_average
-                ? detailMovie.vote_average.toFixed(1)
-                : "-"}
-            </p>
-            <Button className="Movie-caption-button" variant="danger">
+            <Button className="Movie-caption-button" variant="warning">
               Watch Trailer
             </Button>
           </Carousel.Caption>
