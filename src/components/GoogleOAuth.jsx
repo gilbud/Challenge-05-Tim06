@@ -14,9 +14,9 @@ function GoogleOAuth({ buttonText }) {
       let config = {
         method: "post",
         maxBodyLength: Infinity,
-        url: "",
+        url: `${process.env.REACT_APP_API}/v1/auth/google`,
         headers: {
-          "Content-Type": "",
+          "Content-Type": "application/json",
         },
         data: data,
       };
