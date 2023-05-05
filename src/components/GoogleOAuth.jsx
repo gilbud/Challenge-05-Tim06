@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Button } from "react-bootstrap";
 
-function GoogleLogin({ buttonText }) {
+function GoogleOAuth({ buttonText }) {
   const registerLoginWithGoogleAction = async (accessToken) => {
     try {
       let data = JSON.stringify({
@@ -36,16 +36,16 @@ function GoogleLogin({ buttonText }) {
     }
   };
 
-  const loginWithGoogle = useGoogleLogin({
+  const loginRegisterWithGoogle = useGoogleLogin({
     onSuccess: (responseGoogle) =>
       registerLoginWithGoogleAction(responseGoogle.access_token),
   });
 
   return (
-    <Button variant="warning" onClick={() => loginWithGoogle()}>
+    <Button variant="warning" onClick={() => loginRegisterWithGoogle()}>
       {buttonText}
     </Button>
   );
 }
 
-export default GoogleLogin;
+export default GoogleOAuth;

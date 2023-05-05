@@ -6,9 +6,14 @@ import Search from "./pages/Search";
 import Detail from "./pages/Detail";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
+    <GoogleOAuthProvider
+      clientId={process.env.REACT_APP_GOOGLE_OAUTH_CLIENT_ID}
+    >
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homee />} />
@@ -17,7 +22,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
+      <ToastContainer theme="colored" />
     </BrowserRouter>
+    </GoogleOAuthProvider>
   );
 }
 

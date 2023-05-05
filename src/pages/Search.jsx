@@ -39,10 +39,9 @@ function Search() {
       style={{
         width: "18rem",
         margin: "10px",
-        background: "black",
-        outlineColor: "red",
+        background: "rgb(30, 80, 150)",
+        outlineColor: "rgb(221, 189, 47)",
         outlineStyle: "outset",
-        outlineWidth: "thin",
       }}
     >
       <Card.Img
