@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 import GoogleOAuth from "../components/GoogleOAuth";
 import "../styles/StyleLogin.css";
 
-
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -77,10 +76,10 @@ function Login() {
           </Col>
         </Row>
         <Row>
-        <Col className="text-center">
-          <GoogleOAuth buttonText="Login with Google 🌏" />
-        </Col>
-      </Row>
+          <Col className="text-center">
+            <GoogleOAuth buttonText="Login with Google 🌏" />
+          </Col>
+        </Row>
       </Container>
     </>
   );
