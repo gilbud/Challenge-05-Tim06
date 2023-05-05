@@ -3,6 +3,7 @@ import axios from "axios";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { toast } from "react-toastify";
 import NavbarNoSearch from "../components/NavbarNoSearch";
+import GoogleOAuth from "../components/GoogleOAuth";
 
 function Register() {
   const [name, setName] = useState("");
@@ -94,6 +95,11 @@ function Register() {
             <h4 className="text-center">Or</h4>
           </Col>
         </Row>
+        <Row>
+        <Col className="text-center">
+          <GoogleOAuth buttonText="Register with Google 🌏" />
+        </Col>
+      </Row>
       </Container>
     </>
   );
