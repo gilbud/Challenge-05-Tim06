@@ -21,9 +21,9 @@ function Register() {
 
       let config = {
         method: "post",
-        url: "",
-        headres: {
-          "Content-Type": "",
+        url: `${process.env.REACT_APP_API}/v1/auth/register`,
+        Headers: {
+          "Content-Type": "application/json",
         },
         data: data,
       };
@@ -82,7 +82,7 @@ function Register() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </Form.Group>
-              <Button variant="warning" type="submit">
+              <Button variant="warning" type="submit" onClick={onSubmit}>
                 Register
               </Button>
             </Form>
