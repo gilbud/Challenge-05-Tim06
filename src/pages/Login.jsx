@@ -1,9 +1,13 @@
 import { React, useState } from "react";
-import { Form, Button, Container } from "react-bootstrap";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import NavbarNoSearch from "../components/NavbarNoSearch";
 import axios from "axios";
 import { toast } from "react-toastify";
+
+import GoogleOAuth from "../components/GoogleOAuth";
+
 import "../styles/StyleLogin.css";
+
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -68,6 +72,17 @@ function Login() {
         <Button variant="warning" type="submit" onClick={onSubmit}>
           Login
         </Button>
+
+        <Row>
+          <Col>
+            <h4 className="text-center">Or</h4>
+          </Col>
+        </Row>
+        <Row>
+        <Col className="text-center">
+          <GoogleOAuth buttonText="Login with Google 🌏" />
+        </Col>
+      </Row>
       </Container>
     </>
   );
