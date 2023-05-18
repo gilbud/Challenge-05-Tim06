@@ -38,7 +38,7 @@ function Login() {
       // Temporary solution
       window.location.href = "/";
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.response.data.message);
     }
   };
   return (
